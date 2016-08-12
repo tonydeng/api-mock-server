@@ -1,0 +1,13 @@
+{
+  "name": "api-mock-server",
+  "version": "1.0.0",
+  "description": "Package json file to install and start api-mock daemon in docker",
+  "scripts": {
+    "start": "$(npm bin)/api-mock /etc/secrets/api.md"
+  },
+  "author": "Tony Deng <wolf.deng@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "api-mock": "^0.1.1"
+  }
+}
