@@ -60,7 +60,7 @@ Message description
 
 + Parameters
 
-    + id: `68a5sdf67` (required, string) - The message ID
+    + id: `1` (required, number) - The message ID
 
 ### Get Message [GET]
 
