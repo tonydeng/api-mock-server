@@ -1,22 +1,3 @@
-# API-Mock-Server Docker image
-
-Run a  api-blueprint Document application in docker.
-
-> Document your API in the API blueprint format, and API-Mock mocks your routes and sends the responses defined in the api spec.
-
-See more about the application: https://github.com/localmed/api-mock
-
-## Docker Run Example
-
-```bash
-docker run -it -v $PWD/api.md:/etc/secrets/api.md wolfdeng/api-mock-server
-```
-
-## API-Blueprint Example
-
-[API Blueprint Example](example/api.md)
-
-```api-blueprint
 FORMAT: 1A
 HOST: https://wolfdeng.info
 
@@ -67,4 +48,3 @@ Message description
 + Response 200 (application/json)
 
     + Attributes (Message)
-```
