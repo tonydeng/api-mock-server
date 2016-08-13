@@ -8,9 +8,19 @@ See more about the application: https://github.com/localmed/api-mock
 
 ## Docker Run Example
 
+
+### Run Default Example
+
+```bash
+docker run -it -p 3000:3000 wolfdeng/api-mock-server
+```
+
+### Select API Document
+
 ```bash
 docker run -it -v $PWD/api.md:/etc/secrets/api.md -p 3000:3000 wolfdeng/api-mock-server
 ```
+
 
 ## API-Blueprint Example
 
