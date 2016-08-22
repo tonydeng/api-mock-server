@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Api-mock-server : Run api-mock service in docker">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Api-mock-server</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/tonydeng/api-mock-server">View on GitHub</a>
+
+          <h1 id="project_title">Api-mock-server</h1>
+          <h2 id="project_tagline">Run api-mock service in docker</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/tonydeng/api-mock-server/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/tonydeng/api-mock-server/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="api-mock-server-docker-image" class="anchor" href="#api-mock-server-docker-image" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API-Mock-Server Docker image</h1>
+
+<p>Run a  api-blueprint Document application in docker.</p>
+
+<blockquote>
+<p>Document your API in the API blueprint format, and API-Mock mocks your routes and sends the responses defined in the api spec.</p>
+</blockquote>
+
+<p>See more about the application: <a href="https://github.com/localmed/api-mock">https://github.com/localmed/api-mock</a></p>
+
+<h2>
+<a id="docker-run-example" class="anchor" href="#docker-run-example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Docker Run Example</h2>
+
+<h3>
+<a id="run-default-example" class="anchor" href="#run-default-example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Run Default Example</h3>
+
+<div class="highlight highlight-source-shell"><pre>docker run -it -p 3000:3000 wolfdeng/api-mock-server</pre></div>
+
+<h3>
+<a id="select-api-document" class="anchor" href="#select-api-document" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Select API Document</h3>
+
+<div class="highlight highlight-source-shell"><pre>docker run -it -v <span class="pl-smi">$PWD</span>/api.md:/etc/secrets/api.md -p 3000:3000 wolfdeng/api-mock-server</pre></div>
+
+<h2>
+<a id="api-blueprint-example" class="anchor" href="#api-blueprint-example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API-Blueprint Example</h2>
+
+<p><a href="example/api.md">API Blueprint Example</a></p>
+
+<div class="highlight highlight-text-html-markdown-source-gfm-apib"><pre>FORMAT: 1A
+HOST: https://wolfdeng.info
+
+<span class="pl-mh"># Group API Blueprint Example</span>
+
+<span class="pl-mh"># Hello World [/]</span>
+
+API Blueprint Example entry point.
+
+<span class="pl-mh">## Retrieve Entry Point [<span class="pl-mq">GET</span>]</span>
+
+<span class="pl-v">+</span> Response <span class="pl-c1">200</span> <span class="pl-v">(text/plain)</span>
+
+    Hello World!
+
+<span class="pl-mh"># Group Messages</span>
+
+
+<span class="pl-mh"># Data Structures</span>
+
+<span class="pl-mh"><span class="pl-mh">##</span><span class="pl-mh"> </span>Message(object)</span>
+
+<span class="pl-v">+</span> id:1 (<span class="pl-k">required</span>,<span class="pl-en">number</span>) <span class="pl-c">-</span> Unique identifier
+<span class="pl-v">+</span> title: Good Event (<span class="pl-k">required</span>) <span class="pl-c">-</span> Single line description
+<span class="pl-v">+</span> body: This is good event body - Full descroption of the message body.
+
+
+<span class="pl-mh"><span class="pl-mh">##</span><span class="pl-mh"> </span>MessageList(array)</span>
+<span class="pl-v">+</span> (Message)
+
+<span class="pl-mh"><span class="pl-mh">##</span><span class="pl-mh"> </span>Messages [/message]</span>
+
+<span class="pl-mh"><span class="pl-mh">###</span><span class="pl-mh"> </span>List Messages [GET]</span>
+
+<span class="pl-v">+</span> Response 200 (application/json)
+
+    <span class="pl-v">+</span> Attributes (MessageList)
+
+<span class="pl-mh"><span class="pl-mh">##</span><span class="pl-mh"> </span>A Single Message [/message/{id}]</span>
+Message description
+
+<span class="pl-v">+</span> Parameters
+
+    <span class="pl-v">+</span> id: `1` (<span class="pl-k">required</span>, <span class="pl-en">number</span>) <span class="pl-c">-</span> The message ID
+
+<span class="pl-mh"><span class="pl-mh">###</span><span class="pl-mh"> </span>Get Message [GET]</span>
+
+<span class="pl-v">+</span> Response 200 (application/json)
+
+    <span class="pl-v">+</span> Attributes (Message)</pre></div>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Api-mock-server maintained by <a href="https://github.com/tonydeng">tonydeng</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
